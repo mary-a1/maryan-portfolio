@@ -11,7 +11,10 @@ import Markdown from "react-markdown";
 
 const BLUR_FADE_DELAY = 0.04;
 
+
 export default function Page() {
+
+  const PRODUCT_SKILLS_COUNT = 10;
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
@@ -91,27 +94,55 @@ export default function Page() {
                 altText={education.school}
                 title={education.school}
                 subtitle={education.degree}
-                period={`${education.start} - ${education.end}`}
+                period={`${education.end}`}
               />
             </BlurFade>
           ))}
         </div>
       </section>
       <section id="skills">
-        <div className="flex min-h-0 flex-col gap-y-3">
+        <div className="flex min-h-0 flex-col gap-y-4">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">Skills</h2>
           </BlurFade>
-          <div className="flex flex-wrap gap-1">
-            {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
+
+          {/* Product / Business Skills */}
+          <BlurFade delay={BLUR_FADE_DELAY * 10}>
+            <p className="text-sm text-muted-foreground">Product & Business</p>
+          </BlurFade>
+
+          <div className="flex flex-wrap gap-2">
+            {DATA.skills.slice(0, PRODUCT_SKILLS_COUNT).map((skill, id) => (
+              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 11 + id * 0.03}>
+                <Badge>{skill}</Badge>
               </BlurFade>
             ))}
           </div>
+
+          {/* Technical Skills */}
+          <BlurFade delay={BLUR_FADE_DELAY * 12}>
+            <p className="text-sm text-muted-foreground mt-6">Technical</p>
+          </BlurFade>
+
+          <div className="relative overflow-hidden">
+            <div className="flex gap-3 whitespace-nowrap animate-marquee">
+              {[...DATA.skills.slice(PRODUCT_SKILLS_COUNT), ...DATA.skills.slice(PRODUCT_SKILLS_COUNT)].map(
+                (skill, idx) => (
+                  <Badge
+                    key={`${skill}-${idx}`}
+                    variant="secondary"
+                    className="opacity-80 hover:opacity-100 transition-opacity"
+                  >
+                    {skill}
+                  </Badge>
+                )
+              )}
+            </div>
+          </div>
         </div>
       </section>
-      <section id="projects">
+
+      {/* <section id="projects">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -194,7 +225,7 @@ export default function Page() {
             </ul>
           </BlurFade>
         </div>
-      </section>
+      </section> */}
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
@@ -205,7 +236,7 @@ export default function Page() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                 Get in Touch
               </h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              {/* <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Want to chat? Just shoot me a dm{" "}
                 <Link
                   href={DATA.contact.social.X.url}
@@ -215,7 +246,7 @@ export default function Page() {
                 </Link>{" "}
                 and I&apos;ll respond whenever I can. I will ignore all
                 soliciting.
-              </p>
+              </p> */}
             </div>
           </BlurFade>
         </div>
