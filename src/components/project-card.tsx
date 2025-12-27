@@ -26,6 +26,7 @@ interface Props {
     href: string;
   }[];
   className?: string;
+  featured?: boolean;
 }
 
 export function ProjectCard({
@@ -39,12 +40,14 @@ export function ProjectCard({
   video,
   links,
   className,
+  featured,
 }: Props) {
   return (
     <Card
-      className={
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
-      }
+      className={cn(
+        "flex flex-col h-full overflow-hidden border border-border bg-card transition-all duration-300 ease-out hover:-translate-y-[2px] hover:border-primary/40",
+        featured && "ring-1 ring-primary/20"
+      )}
     >
       <Link
         href={href || "#"}
@@ -70,8 +73,13 @@ export function ProjectCard({
           />
         )}
       </Link>
-      <CardHeader className="px-2">
+      <CardHeader className="px-4 pt-4 pb-2 space-y-2">
         <div className="space-y-1">
+          {featured && (
+            <span className="inline-block w-fit rounded-full bg-primary/10 text-primary px-2 py-0.5 text-[10px] font-medium">
+              Featured
+            </span>
+          )}
           <CardTitle className="mt-1 text-base">{title}</CardTitle>
           <time className="font-sans text-xs">{dates}</time>
           <div className="hidden font-sans text-xs underline print:visible">

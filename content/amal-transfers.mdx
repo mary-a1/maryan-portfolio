@@ -1,0 +1,138 @@
+---
+title: Amal Transfers
+type: case-study
+description: Designing a transparent, trust-first money transfer experience in a regulated fintech context
+---
+
+## Amal Transfers — **Product Case Study**
+
+Amal Transfers is a fintech money transfer platform designed to help users send money internationally with clarity, transparency, and confidence. 
+
+The product focuses on reducing confusion around exchange rates, fees, and payout amounts. These are common pain points in cross-border transfers, especially within regulated financial environments.
+
+This project reflects my approach to building thoughtful, constraint-aware digital products that balance user needs, business logic, and compliance considerations.
+
+---
+
+## Problem
+
+Many money transfer platforms unintentionally create uncertainty for users by:
+- Hiding fees within exchange rates
+- Making it difficult to understand how much the recipient will actually receive
+- Presenting complex financial calculations without sufficient explanation
+
+For users sending money to family or dependents, even small misunderstandings can quickly erode trust. The core problem was not just usability—it was **predictability and transparency** in a high-stakes financial interaction.
+
+---
+
+## Context & Constraints
+
+- **Industry:** Fintech / money transfer  
+- **Environment:** Regulated financial services  
+- **Primary users:** Individuals sending international transfers  
+- **Key constraints:**
+  - Clear disclosure of fees and exchange logic
+  - Avoiding misleading calculations or assumptions
+  - Designing for trust without overwhelming users
+  - Accounting for future legal and compliance requirements
+
+The product needed to feel simple on the surface while remaining accurate and defensible underneath.
+
+---
+
+## My Role
+
+I led the product thinking, UX design, and technical implementation for Amal Transfers.
+
+**My responsibilities included:**
+- Defining the product problem and scope
+- Designing user flows and interaction logic
+- Making pricing and calculation decisions
+- Implementing frontend and backend logic
+- Balancing usability, accuracy, and regulatory awareness
+
+---
+
+## Key Product Decisions
+
+### 1. Bidirectional Transfer Calculator
+
+Instead of a one-way input model, the calculator allows users to:
+- Enter how much they want to **send**, or
+- Specify how much the **recipient should receive**
+
+This decision aligned the product with real user intent and reduced mental math. It also required careful handling of fees and exchange rates to ensure calculations remained transparent and consistent in both directions.
+
+---
+
+### 2. Explicit Fee & Exchange Breakdown
+
+Rather than embedding fees invisibly into the exchange rate, the interface breaks down:
+- Transfer amount
+- Fees
+- Exchange rate
+- Final payout
+
+This approach prioritized clarity over perceived simplicity and helped users understand *why* values changed—not just *that* they did.
+
+---
+
+### 3. Constraint-Driven Simplicity
+
+The product intentionally limits:
+- Supported transfer directions
+- Currency configurations
+- Advanced options in early versions
+
+This was a deliberate trade-off to reduce cognitive load, minimize edge cases, and ensure correctness in a regulated context before expanding functionality.
+
+---
+
+### 4. Legal, Privacy & Compliance Awareness
+
+While building the product, I became increasingly aware of how legal and compliance considerations shape fintech experiences. Even at an early stage, decisions around data handling, transparency, and user consent influenced product direction.
+
+Although cookie preferences and formal legal disclosures were not implemented in this version, the project reinforced the importance of:
+- Treating transparency as a core product feature
+- Anticipating privacy expectations early
+- Designing with future compliance requirements in mind
+
+This learning informed how I thought about trust, consent, and long-term scalability for financial products.
+
+---
+
+## UX & Technical Execution
+
+- Designed linear, step-by-step user flows to reduce cognitive load
+- Implemented real-time calculation logic to prevent unexpected outcomes
+- Built with React and Next.js for maintainability and performance
+- Structured components to support future expansion without redesigning core logic
+- Implemented structured version control and deployment practices, with supporting documentation to enable future upgrades and long-term product maintainability
+
+
+The interface acts as a translator—turning complex financial rules into understandable user feedback.
+
+---
+
+## What I Learned
+
+- Transparency builds trust more effectively than visual simplicity alone
+- Users value understanding *why* a number changes, not just the result
+- Clear constraints can improve usability and reduce risk
+- Fintech products require early consideration of compliance, even before formal implementation
+
+---
+
+## Next Steps
+
+If extended further, I would:
+- Introduce cookie preference controls and clearer privacy disclosures
+- Add saved recipients and transfer history
+- Validate usability through user testing
+- Explore support for additional transfer corridors
+- Strengthen regulatory messaging as the product scales
+
+---
+
+*This project reflects my approach to building thoughtful, product-led solutions in regulated environments, with an emphasis on clarity, trust, and long-term scalability.*
+

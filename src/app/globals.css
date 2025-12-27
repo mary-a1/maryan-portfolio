@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
+  /* :root {
       --background: 0 0% 100%;
       --foreground: 210 11.1% 3.53%;
 
@@ -33,9 +33,9 @@
       --ring: 0 0% 3.9%;
 
       --radius: 0.5rem;
-    }
+    } */
 
-    .dark {
+  /* .dark {
       --background: 210 11.1% 3.53%;
       --foreground: 0 0% 98%;
 
@@ -63,70 +63,213 @@
       --border: 0 0% 14.9%;
       --input: 0 0% 14.9%;
       --ring: 0 0% 83.1%;
-    }
+    } */
+
+  :root {
+    /* Core surfaces */
+    --background: 0 0% 100%;
+    --foreground: 210 11% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 11% 8%;
+
+    /* Brand */
+    --primary: 338 38% 31%; /* #6d314d plum */
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft accents */
+    --accent: 23 52% 75%; /* #dda894 blush */
+    --accent-foreground: 338 38% 31%;
+
+    /* Secondary / chips */
+    --secondary: 23 52% 94%;
+    --secondary-foreground: 338 38% 31%;
+
+    /* Muted text + dividers */
+    --muted: 23 30% 95%;
+    --muted-foreground: 210 9% 40%;
+
+    /* Utility */
+    --border: 23 20% 88%;
+    --input: 23 20% 88%;
+    --ring: 338 38% 45%; /* soft plum focus ring */
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --radius: 0.6rem;
+
+    --soft-foreground: 338 20% 35%; /* muted plum */
   }
 
-  @layer base {
-    * {
-      @apply border-border;
-    }
-    body {
-      @apply bg-background text-foreground;
-    }
+  .dark {
+    /* Core surfaces */
+    --background: 210 11% 6%;
+    --foreground: 0 0% 96%;
+
+    --card: 210 11% 8%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 210 11% 8%;
+    --popover-foreground: 0 0% 96%;
+
+    /* Brand flips beautifully in dark */
+    --primary: 23 52% 75%; /* blush */
+    --primary-foreground: 210 11% 6%;
+
+    --accent: 338 38% 31%; /* plum */
+    --accent-foreground: 0 0% 96%;
+
+    --secondary: 210 11% 14%;
+    --secondary-foreground: 23 52% 80%;
+
+    --muted: 210 11% 14%;
+    --muted-foreground: 0 0% 65%;
+
+    --border: 210 11% 16%;
+    --input: 210 11% 16%;
+    --ring: 23 52% 75%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --soft-foreground: 23 35% 75%; /* blush-tinted light */
   }
 
-  h3 code {
-    @apply !text-lg md:!text-xl;
+  .theme {
+    --animate-marquee: marquee var(--duration) infinite linear;
+    --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+    --animate-line-shadow: line-shadow 15s linear infinite;
   }
-  
-  pre {
-    @apply !px-0 rounded-lg overflow-x-auto py-4
+}
+
+@layer base {
+  * {
+    @apply border-border;
   }
-   
-  pre [data-line] {
-    @apply px-4
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .badge {
+    @apply bg-secondary text-secondary-foreground border border-border;
   }
 
-  code {
-    @apply text-sm md:text-base !leading-loose;
+  .badge:hover {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:opacity-90;
+  }
+
+  .resume-card,
+  .project-card {
+    @apply border border-border bg-card;
+  }
+
+  .resume-card:hover,
+  .project-card:hover {
+    @apply border-primary/40;
+  }
+
+  .resume-subtitle {
+    @apply text-soft text-xs font-medium;
+  }
+
+  .resume-period {
+    @apply text-muted-foreground text-xs sm:text-sm;
   }
   
-  pre > code {
-    counter-reset: line;
+  .section-title {
+    position: relative;
   }
-  
+
+  .section-title::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+    background: hsl(var(--primary));
+    border-radius: 999px;
+    opacity: 0.4;
+  }
+
+  .dark .tech-icon {
+    opacity: 0.7;
+  }
+
+  .tech-icon:hover {
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .text-soft {
+    color: hsl(var(--soft-foreground));
+  }
+}
+
+h3 code {
+  @apply !text-lg md:!text-xl;
+}
+
+pre {
+  @apply !px-0 rounded-lg overflow-x-auto py-4;
+}
+
+pre [data-line] {
+  @apply px-4;
+}
+
+code {
+  @apply text-sm md:text-base !leading-loose;
+}
+
+pre > code {
+  counter-reset: line;
+}
+
+code[data-theme*=" "],
+code[data-theme*=" "] span {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+}
+
+@media (prefers-color-scheme: dark) {
   code[data-theme*=" "],
   code[data-theme*=" "] span {
-    color: var(--shiki-light);
-    background-color: var(--shiki-light-bg);
+    color: var(--shiki-dark);
+    background-color: var(--shiki-dark-bg);
   }
-   
-  @media (prefers-color-scheme: dark) {
-    code[data-theme*=" "],
-    code[data-theme*=" "] span {
-      color: var(--shiki-dark);
-      background-color: var(--shiki-dark-bg);
-    }
-  }
-  
-  code[data-line-numbers] {
-    counter-reset: line;
-  }
-  
-  code[data-line-numbers] > [data-line]::before {
-    counter-increment: line;
-    content: counter(line);
-    @apply inline-block w-4 mr-4 text-right text-gray-500;
-  }
- 
-  code {
-    counter-reset: line;
-  }
- 
-  code > [data-line]::before {
+}
+
+code[data-line-numbers] {
+  counter-reset: line;
+}
+
+code[data-line-numbers] > [data-line]::before {
   counter-increment: line;
   content: counter(line);
- 
+  @apply inline-block w-4 mr-4 text-right text-gray-500;
+}
+
+code {
+  counter-reset: line;
+}
+
+code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
   /* Other styling */
   display: inline-block;
   width: 1rem;
@@ -134,11 +277,11 @@
   text-align: right;
   color: gray;
 }
- 
+
 code[data-line-numbers-max-digits="2"] > [data-line]::before {
   width: 2rem;
 }
- 
+
 code[data-line-numbers-max-digits="3"] > [data-line]::before {
   width: 3rem;
 }
@@ -158,4 +301,31 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+@theme inline {
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes line-shadow {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% -100%;
+    }
+  }
 }
