@@ -1,3 +1,5 @@
+"use client";
+
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
@@ -8,16 +10,23 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import { Marquee } from "@/components/ui/marquee";
+// import { Marquee } from "@/components/ui/marquee";
 import { SparklesText } from "@/components/ui/sparkles-text";
+import dynamic from "next/dynamic";
 
 
 const BLUR_FADE_DELAY = 0.04;
 
+const Marquee = dynamic(
+  () =>
+    import("@/components/ui/marquee").then((mod) => mod.Marquee),
+  { ssr: false }
+);
 
 export default function Page() {
-
+  
   const PRODUCT_SKILLS_COUNT = 12;
+  
 
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
