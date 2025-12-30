@@ -9,6 +9,10 @@ const config = {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
+  safelist: [
+    "animate-marquee",
+    "animate-marquee-vertical",
+  ],
   prefix: "",
   theme: {
     container: {

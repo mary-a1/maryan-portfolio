@@ -24,9 +24,9 @@ const Marquee = dynamic(
 );
 
 export default function Page() {
-  
+
   const PRODUCT_SKILLS_COUNT = 12;
-  
+
 
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
@@ -57,6 +57,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold section-title">About</h2>
@@ -67,6 +68,7 @@ export default function Page() {
           </Markdown>
         </BlurFade>
       </section>
+
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
@@ -91,6 +93,7 @@ export default function Page() {
           ))}
         </div>
       </section>
+
       <section id="education">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
@@ -114,42 +117,57 @@ export default function Page() {
           ))}
         </div>
       </section>
-      <section id="skills">
-        <div className="flex min-h-0 flex-col gap-y-4">
-          <h2 className="text-xl font-bold section-title">Skills</h2>
 
-          {/* Product / Business */}
-          <p className="text-sm text-muted-foreground">Product & Business</p>
+      <section id="skills" className="py-8">
+        <div className="flex flex-col gap-y-8">
+          <h2 className="text-xl font-semibold section-title">Skills</h2>
 
-          <div className="flex flex-wrap gap-2">
-            {DATA.productSkills.map((skill) => (
-              <Badge key={skill}>{skill}</Badge>
-            ))}
+          {/* Product & Business */}
+          <div className="space-y-4">
+            <p className="text-sm font-medium text-muted-foreground">
+              Product & Business
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+              {DATA.productSkills.map((skill) => (
+                <Badge
+                  key={skill}
+                  variant="secondary"
+                  className="text-xs font-medium px-3 py-1"
+                >
+                  {skill}
+                </Badge>
+              ))}
+            </div>
           </div>
 
           {/* Technical */}
-          <p className="text-sm text-muted-foreground mt-6">Technical</p>
+          <div className="space-y-5 pt-6 border-t border-border/40">
+            <p className="text-sm font-medium text-muted-foreground">
+              Technical Toolkit
+            </p>
 
-          <Marquee pauseOnHover className="mt-3">
-            {DATA.technicalSkillLogos.map((skill) => (
-              <div
-                key={skill.name}
-                className="flex items-center gap-2 mx-6 opacity-70 hover:opacity-100 transition"
-              >
-                <img
-                  src={skill.icon}
-                  alt={skill.name}
-                  className="h-6 w-6 tech-icon"
-                />
-                <span className="text-sm whitespace-nowrap">
-                  {skill.name}
-                </span>
-              </div>
-            ))}
-          </Marquee>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-4">
+              {DATA.technicalSkillLogos.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="flex items-center gap-3 opacity-70 hover:opacity-100 transition"
+                >
+                  <img
+                    src={skill.icon}
+                    alt={skill.name}
+                    className="h-6 w-6"
+                  />
+                  <span className="text-sm text-muted-foreground whitespace-nowrap">
+                    {skill.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
-
+      
       <section id="projects">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>

@@ -8,9 +8,9 @@ export const DATA = {
   location: "Toronto, ON",
   locationLink: "https://www.google.com/maps/place/toronto",
   description:
-    "Digital Strategist • Product Analyst • UX Enthusiast • IT Technical Product Manager • Business System Analyst • Growth PM • UX Enthusiast",
+    "Technical Product Manager • Platform & Systems • Customer-Facing Products",
   summary:
-    "I'm a Product Analyst with experience supporting digital banking products across Simplii Financial, Tangerine, and Scotiabank. My work focuses on translating business and user needs into clear product requirements, validating solutions through usability testing and data, and partnering closely with design and engineering teams to ship reliable customer-facing features in regulated environments.",
+    "Technical Product Manager delivering customer-facing platforms in regulated environments. Specializes in product requirements definition, success metrics, and close collaboration with design and engineering to ship reliable, scalable features.",
   avatarUrl: "/me.png",
   skills: [
     // Product / Business (used temporarily by page.tsx)
@@ -55,13 +55,13 @@ export const DATA = {
     "Risk & Compliance Awareness",
   ],
   technicalSkills: [
-    "TypeScript",
     "JavaScript",
-    "React",
-    "Next.js",
-    "Node.js",
+    "TypeScript",
     "SQL",
     "PostgreSQL",
+    "Node.js",
+    "Next.js",
+    "React",
     "Git",
     "Tailwind CSS",
   ],
@@ -78,7 +78,12 @@ export const DATA = {
     { name: "Tailwind CSS", icon: "/logos/tailwind.svg" },
     { name: "Confluence", icon: "/logos/confluence.svg" },
   ],
+  technical: {
+    languages: ["TypeScript", "JavaScript", "SQL", "PostgreSQL"],
+    frameworks: ["React", "Next.js", "Node.js"],
+    tools: ["Jira", "Confluence", "Git", "Tailwind CSS"],
 
+  },
 
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -126,7 +131,7 @@ export const DATA = {
       start: "May 2025",
       end: "Dec 2025",
       description:
-        "Acted as product owner for Simplii's chatbot, writing PRDs and translating business needs into product specifications. Led end-to-end QA, regression, and pilot testing to support smooth releases with minimal defects. Analyzed chatbot KPIs, customer feedback, and user flows to inform roadmap prioritization and feature decisions. Partnered closely with PMs, UX, and engineering to scope and test new mobile banking features.",
+        "Owned product requirements for Simplii's customer-facing chatbot, defining PRDs and partnering with engineering to deliver reliable feature updates. Led QA, regression, and pilot testing to support stable releases. Analyzed KPIs, user flows, and feedback to inform prioritization and roadmap decisions across mobile banking features."
     },
     {
       company: "Tangerine",
@@ -137,7 +142,7 @@ export const DATA = {
       start: "May 2024",
       end: "Aug 2024",
       description:
-        "Supported digital product initiatives within a regulated banking environment. Collaborated with product, design, and engineering teams on testing, documentation, and customer experience validation for mobile banking features.",
+        "Supported digital product initiatives within a regulated banking environment. Partnered with Product Managers, UX, and engineering on requirements refinement, testing, and usability validation for mobile banking features. Synthesized user feedback and adoption insights to support roadmap decisions.",
     },
     {
       company: "Scotiabank",
@@ -148,7 +153,7 @@ export const DATA = {
       start: "Jan 2024",
       end: "Apr 2024",
       description:
-        "Delivered a Bill 64 compliance initiative end-to-end, meeting regulatory deadlines with zero audit issues. Led a Profile Settings redesign, improving CTA clarity and reducing onboarding drop-offs by approximately 12% in usability testing.",
+        "Led cross-functional delivery of a regulated platform initiative, meeting compliance requirements with zero audit issues. Owned feature delivery for a Profile Settings redesign, improving CTA clarity and reducing onboarding drop-offs by ~12% in usability testing.",
     },
     {
       company: "Scotiabank",
@@ -159,7 +164,7 @@ export const DATA = {
       start: "Sept 2023",
       end: "Dec 2023",
       description:
-        "Built a no/low-code proof of concept integrating AppSec tools into reporting dashboards. Supported incident response, Jira ticketing, and documentation across UAT and production environments within Cloud Security operations.",
+        "Built a no/low-code proof of concept integrating AppSec tools into reporting dashboards, improving visibility into system health and operational risk. Supported incident response, Jira workflows, and documentation across UAT and production for cloud security services.",
     },
   ],
   education: [
@@ -182,7 +187,7 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Amal Transfers",
+      title: "Amal Transfers - Real-Time Transaction Platform",
       href: "https://amaltransfers.ca",
       dates: "2024 - Present",
       active: true,
@@ -212,7 +217,7 @@ export const DATA = {
       video: "",
     },
     {
-      title: "PharmAli",
+      title: "PharmAli - Scalable Web Platform MVP",
       href: "https://github.com/IrhaAli/PharmAli",
       dates: "2023",
       active: false,
@@ -281,5 +286,5 @@ export const DATA = {
       video: "",
     },
   ],
-  
+
 } as const;
