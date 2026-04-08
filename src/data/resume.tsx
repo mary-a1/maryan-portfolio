@@ -186,6 +186,37 @@ export const DATA = {
     },
   ],
   projects: [
+     {
+      title: "Maalin Activewear",
+      href: "https://maalinactive.com",
+      dates: "2025 - Present",
+      active: true,
+      description:
+        "Built a modest activewear brand as a live product environment to test demand, reduce friction, and improve customer decision confidence across content, product discovery, and conversion.",
+      technologies: [
+        "Product Strategy",
+        "E-Commerce",
+        "UX",
+        "Fintech",
+        "Metric Conversion",
+        "Shopify",
+        "Brand Systems",
+      ],
+      links: [
+        {
+          type: "Case Study",
+          href: "/blog/maalin-active",
+          icon: <NotebookIcon className="size-3" />,
+        },
+        {
+          type: "Website",
+          href: "https://maalinactive.com",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
     {
       title: "Amal Transfers - Real-Time Transaction Platform",
       href: "https://amaltransfers.ca",
@@ -263,28 +294,28 @@ export const DATA = {
       image: "",
       video: "",
     },
-    {
-      title: "Quiz App",
-      href: "https://github.com/mary-a1/Quiz-App",
-      dates: "2022",
-      active: false,
-      description:
-        "An interactive quiz application built to strengthen fundamentals in state management, user interaction, and component-based UI design.",
-      technologies: [
-        "JavaScript",
-        "React",
-        "UI Logic",
-      ],
-      links: [
-        {
-          type: "GitHub",
-          href: "https://github.com/mary-a1/Quiz-App",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "",
-    },
+    // {
+    //   title: "Quiz App",
+    //   href: "https://github.com/mary-a1/Quiz-App",
+    //   dates: "2022",
+    //   active: false,
+    //   description:
+    //     "An interactive quiz application built to strengthen fundamentals in state management, user interaction, and component-based UI design.",
+    //   technologies: [
+    //     "JavaScript",
+    //     "React",
+    //     "UI Logic",
+    //   ],
+    //   links: [
+    //     {
+    //       type: "GitHub",
+    //       href: "https://github.com/mary-a1/Quiz-App",
+    //       icon: <Icons.github className="size-3" />,
+    //     },
+    //   ],
+    //   image: "",
+    //   video: "",
+    // },
   ],
 
 } as const;
