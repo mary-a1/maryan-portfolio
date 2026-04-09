@@ -2,6 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import rehypePrettyCode from "rehype-pretty-code";
+import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
@@ -11,9 +12,11 @@ import { unified } from "unified";
 type Metadata = {
   title: string;
   publishedAt: string;
-  summary: string;
+  summary?: string;
+  description?: string;
   image?: string;
-  featured: true
+  featured?: boolean;
+  type?: string;
 };
 
 function getMDXFiles(dir: string) {
@@ -24,16 +27,16 @@ export async function markdownToHTML(markdown: string) {
   const p = await unified()
     .use(remarkParse)
     .use(remarkGfm)
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
     .use(rehypePrettyCode, {
-      // https://rehype-pretty.pages.dev/#usage
       theme: {
         light: "min-light",
         dark: "min-dark",
       },
       keepBackground: false,
     })
-    .use(rehypeStringify)
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(markdown);
 
   return p.toString();
@@ -53,16 +56,24 @@ export async function getPost(slug: string) {
 
 async function getAllPosts(dir: string) {
   let mdxFiles = getMDXFiles(dir);
-  return Promise.all(
-    mdxFiles.map(async (file) => {
+
+  const posts = await Promise.all(
+    mdxFiles.map(async (file: string) => {
       let slug = path.basename(file, path.extname(file));
       let { metadata, source } = await getPost(slug);
+
       return {
-        metadata,
+        metadata: metadata as Metadata,
         slug,
         source,
       };
-    }),
+    })
+  );
+
+  return posts.sort(
+    (a: { metadata: { publishedAt: string | number | Date; }; }, b: { metadata: { publishedAt: string | number | Date; }; }) =>
+      new Date(b.metadata.publishedAt).getTime() -
+      new Date(a.metadata.publishedAt).getTime()
   );
 }
 
