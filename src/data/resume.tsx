@@ -4,13 +4,13 @@ import { HomeIcon, NotebookIcon } from "lucide-react";
 export const DATA = {
   name: "Maryan Ali",
   initials: "MA",
-  url: "https://dillion.io",
+  url: "https://maryan-portfolio.vercel.app",
   location: "Toronto, ON",
   locationLink: "https://www.google.com/maps/place/toronto",
   description:
-    "Technical Product Manager • Platform & Systems • Customer-Facing Products",
+    "Aspiring Product Manager • Customer Facing Platforms • Systems & Product Operations",
   summary:
-    "Technical Product Manager delivering customer-facing platforms in regulated environments. Specializes in product requirements definition, success metrics, and close collaboration with design and engineering to ship reliable, scalable features.",
+    "I'm the Acting Product Owner for Simplii's customer-facing chatbot at CIBC — owning PRDs, backlog, and release readiness for an eBanking API initiative spanning mobile, web, and chatbot authentication. My manager wanted to convert me to full-time, but the open headcount sat at a senior level — so I'm now looking for the right Product role to land in next.\n\nBefore CIBC, I shipped digital onboarding work at Tangerine and Scotiabank, and started my career as an Application Security intern building a no-code security console. I have a CS degree from York and write SQL well enough to run my own funnel analyses.\n\nOn the side, I'm involved with two real products. **[MAALIN Activewear](/blog/maalin-active)** is a modest activewear brand I co-launched with my partner Hana — she owns the brand and stocks inventory, and I run the digital operations on Shopify (product, UX, navigation, pricing, conversion). It's where I learned that merchant product decisions are a constant tradeoff between discovery, trust, and conversion. **[Amal Transfers](/blog/amal-transfers)** is a cross-border remittance prototype I built end-to-end (Next.js, Node.js). Both teach me more about user behaviour than any course has.",
   avatarUrl: "/me.png",
   skills: [
     // Product / Business (used temporarily by page.tsx)
@@ -41,18 +41,14 @@ export const DATA = {
     "Confluence",
   ],
   productSkills: [
-    "Product Strategy",
-    "Requirements Definition (PRDs)",
+    "Product Requirements (PRDs)",
     "Roadmapping & Prioritization",
-    "UX Research",
-    "Usability Testing",
-    "Product Analytics & KPIs",
-    "Comparative Analysis & Trade-offs",
-    "Experimentation & A/B Testing",
-    "Stakeholder Collaboration",
-    "Agile / Scrum",
-    "QA, UAT & Release Validation",
-    "Risk & Compliance Awareness",
+    "SQL & Funnel Analysis",
+    "A/B Testing & Experimentation",
+    "User Research",
+    "Conversion Optimization",
+    "Stakeholder Management",
+    "API Integrations",
   ],
   technicalSkills: [
     "JavaScript",
@@ -101,7 +97,7 @@ export const DATA = {
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/maryan-ali-web-dev",
+        url: "https://www.linkedin.com/in/maryanali-pm",
         icon: Icons.linkedin,
         navbar: true,
       },
@@ -131,7 +127,7 @@ export const DATA = {
       start: "May 2025",
       end: "Dec 2025",
       description:
-        "Owned product requirements for Simplii's customer-facing chatbot, defining PRDs and partnering with engineering to deliver reliable feature updates. Led QA, regression, and pilot testing to support stable releases. Analyzed KPIs, user flows, and feedback to inform prioritization and roadmap decisions across mobile banking features."
+        "Acting Product Owner for Simplii's customer-facing chatbot team — owned PRDs, backlog priorities, and release readiness for an eBanking API initiative spanning mobile, web, and chatbot authentication. Cut authentication latency by ~2 seconds and reduced sprint-over-sprint service deviations by 10%. Wrote requirements engineering didn't have to chase me about, ran SQL on funnel data to find drop-offs, and partnered with eng on QA, regression testing, and release support."
     },
     {
       company: "Tangerine",
@@ -142,7 +138,7 @@ export const DATA = {
       start: "May 2024",
       end: "Aug 2024",
       description:
-        "Supported digital product initiatives within a regulated banking environment. Partnered with Product Managers, UX, and engineering on requirements refinement, testing, and usability validation for mobile banking features. Synthesized user feedback and adoption insights to support roadmap decisions.",
+        "Mapped end-to-end customer onboarding workflows across systems to identify the gaps causing duplicate account creation. Defined backend validation rules that improved data integrity by ~10%. Synthesized IVR data, customer feedback, and user research into requirements that PMs and engineering used to plan the next quarter of onboarding work.",
     },
     {
       company: "Scotiabank",
@@ -153,7 +149,7 @@ export const DATA = {
       start: "Jan 2024",
       end: "Apr 2024",
       description:
-        "Led cross-functional delivery of a regulated platform initiative, meeting compliance requirements with zero audit issues. Owned feature delivery for a Profile Settings redesign, improving CTA clarity and reducing onboarding drop-offs by ~12% in usability testing.",
+        "Translated Bill 64 (Quebec's modernized privacy law) into system requirements and documentation engineering could ship against — owned compliance updates through review with zero audit issues. Used customer behaviour data to identify friction in onboarding and proposed changes that lifted task completion ~12% in usability testing. Communicated weekly project risks to senior stakeholders, translating engineering blockers into business decisions.",
     },
     {
       company: "Scotiabank",
@@ -164,7 +160,7 @@ export const DATA = {
       start: "Sept 2023",
       end: "Dec 2023",
       description:
-        "Built a no/low-code proof of concept integrating AppSec tools into reporting dashboards, improving visibility into system health and operational risk. Supported incident response, Jira workflows, and documentation across UAT and production for cloud security services.",
+        "Built a no-code security console aggregating platform health data across teams — used internally for reporting, monitoring, and incident triage. Standardized the incident escalation workflow across UAT and production environments. This is also where I learned how to talk to engineering teams without making them want to throw their laptops, which turned out to be the most valuable PM skill I picked up.",
     },
   ],
   education: [
@@ -192,14 +188,14 @@ export const DATA = {
       dates: "2025 - Present",
       active: true,
       description:
-        "Built a modest activewear brand as a live product environment to test demand, reduce friction, and improve customer decision confidence across content, product discovery, and conversion.",
+        "A modest activewear brand I co-launched with my partner Hana — she owns the brand and stocks the inventory; I run the digital operations on Shopify (product, UX, navigation, pricing, conversion). Live merchant context for everything I write about commerce and UX.",
       technologies: [
-        "Product Strategy",
-        "E-Commerce",
-        "UX",
-        "Fintech",
-        "Metric Conversion",
         "Shopify",
+        "E-Commerce",
+        "Conversion Optimization",
+        "Product Strategy",
+        "UX Research",
+        "Funnel Analysis",
         "Brand Systems",
       ],
       links: [
@@ -223,7 +219,7 @@ export const DATA = {
       dates: "2024 - Present",
       active: true,
       description:
-        "A fintech money transfer platform designed and deployed with a focus on usability, trust, and regulatory constraints. Led product decisions through comparative analysis of user flows, pricing logic, and technical trade-offs.",
+        "A cross-border remittance platform I designed and shipped end-to-end. Real-time exchange rate logic, transparent fee breakdowns, and a bidirectional calculator built specifically for users who send money to family.",
       technologies: [
         "Product Strategy",
         "UX",
