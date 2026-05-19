@@ -7,22 +7,37 @@ description: Designing a transparent, trust-first money transfer experience in a
 
 ## Amal Transfers — **Product Case Study**
 
-Amal Transfers is a fintech money transfer platform designed to help users send money internationally with clarity, transparency, and confidence. 
+## TL;DR
 
-The product focuses on reducing confusion around exchange rates, fees, and payout amounts. These are common pain points in cross-border transfers, especially within regulated financial environments.
+A cross-border remittance platform I designed and shipped end-to-end as a solo project. Built specifically for users sending money to family — the population most affected by hidden fees and confusing exchange rates.
+
+**Scope:**
+- Solo project — product, design, frontend, backend
+- Live site: [amaltransfers.ca](https://amaltransfers.ca)
+- Tech: Next.js, Node.js
+- Status: Functional MVP; not processing real transactions in v1 (regulatory and banking partnerships out of scope)
+
+This case study walks through the four product decisions that mattered most and what I learned about building trust in regulated fintech.
+
+---
+
+Amal Transfers is a fintech money transfer platform designed to help users send money internationally with clarity, transparency, and confidence.
+
+The product focuses on reducing confusion around exchange rates, fees, and payout amounts — common pain points in cross-border transfers, especially within regulated financial environments.
 
 This project reflects my approach to building thoughtful, constraint-aware digital products that balance user needs, business logic, and compliance considerations.
 
 ---
 
-## Problem
+## The problem
 
-Many money transfer platforms unintentionally create uncertainty for users by:
-- Hiding fees within exchange rates
-- Making it difficult to understand how much the recipient will actually receive
-- Presenting complex financial calculations without sufficient explanation
+Money transfer is a multi-hundred-billion-dollar global market — and the most-used products in it (Western Union, MoneyGram, big bank wires) consistently rank among the lowest for customer satisfaction in international remittances. The reason isn't UI. It's that the math is hidden:
 
-For users sending money to family or dependents, even small misunderstandings can quickly erode trust. The core problem was not just usability—it was **predictability and transparency** in a high-stakes financial interaction.
+- Fees buried inside the exchange rate
+- "You'll receive ~$X" with no breakdown of why X is what it is
+- Exchange rates that shift between quote and confirmation, with no warning
+
+For users sending money to family or dependents, even small misunderstandings erode trust. The core problem isn't usability — it's **predictability and transparency** in a high-stakes financial interaction.
 
 ---
 
@@ -54,7 +69,7 @@ I led the product thinking, UX design, and technical implementation for Amal Tra
 
 ---
 
-## Key Product Decisions
+## The four decisions that mattered
 
 ### 1. Bidirectional Transfer Calculator
 
@@ -117,10 +132,10 @@ The interface acts as a translator—turning complex financial rules into unders
 
 ## What I Learned
 
-- Transparency builds trust more effectively than visual simplicity alone
-- Users value understanding *why* a number changes, not just the result
-- Clear constraints can improve usability and reduce risk
-- Fintech products require early consideration of compliance, even before formal implementation
+- **Transparency beats visual simplicity.** A clean UI with hidden math feels nicer but earns less trust than a denser UI that shows the work.
+- **Users want to understand _why_, not just _what_.** A user who knows why their recipient is getting $312.45 is a user who comes back. A user who just sees "$312.45" assumes you took something.
+- **Constraints are a feature.** Limiting transfer corridors and currencies wasn't a v1 compromise — it was a usability decision. More options means more decisions, and decisions are friction.
+- **Compliance is product work.** Even before legal involvement, decisions about consent, data, and disclosure shape the product. I started thinking about it in v1 and would do it earlier next time.
 
 ---
 
