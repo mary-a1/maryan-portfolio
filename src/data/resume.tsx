@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Aspiring Product Manager • Customer Facing Platforms • Systems & Product Operations",
   summary:
-    "I'm the Acting Product Owner for Simplii's customer-facing chatbot at CIBC — owning PRDs, backlog, and release readiness for an eBanking API initiative spanning mobile, web, and chatbot authentication. My manager wanted to convert me to full-time, but the open headcount sat at a senior level — so I'm now looking for the right Product role to land in next.\n\nBefore CIBC, I shipped digital onboarding work at Tangerine and Scotiabank, and started my career as an Application Security intern building a no-code security console. I have a CS degree from York and write SQL well enough to run my own funnel analyses.\n\nOn the side, I'm involved with two real products. **[MAALIN Activewear](/blog/maalin-active)** is a modest activewear brand I co-launched with my partner Hana — she owns the brand and stocks inventory, and I run the digital operations on Shopify (product, UX, navigation, pricing, conversion). It's where I learned that merchant product decisions are a constant tradeoff between discovery, trust, and conversion. **[Amal Transfers](/blog/amal-transfers)** is a cross-border remittance prototype I built end-to-end (Next.js, Node.js). Both teach me more about user behaviour than any course has.",
+    "I'm a product manager who learns by building. I have a CS degree from York, two years of product experience across three Canadian banks, and two real products I work on outside of my day job.\n\nMost recently, I worked on Simplii Financial's customer facing chatbot at CIBC, where I acted as product owner for an eBanking API initiative spanning mobile, web, and chatbot authentication. I owned the PRDs, backlog, and release readiness. My manager wanted to convert me to full time, but the open headcount was at a senior level, so I'm now looking for my next full time product role.\n\nBefore CIBC, I worked on digital onboarding at Tangerine and Scotiabank, and started my career as an Application Security intern building a no code security console. I write SQL well enough to run my own funnel analyses.\n\nOutside of work, I build for people like me. I'm a first generation Somali Canadian, and my family sends money back home regularly. I built **[Amal Transfers](/blog/amal-transfers)** end to end (Next.js, Node.js) for my community remittance business, because I know firsthand what a confusing flow costs the people using it. I also co-launched **[MAALIN Activewear](/blog/maalin-active)**, a modest activewear brand, with my partner Hana. She owns the brand and inventory, and I run digital operations on Shopify, including product, UX, navigation, pricing, and conversion. It's where I learned that merchant product decisions are a constant tradeoff between discovery, trust, and conversion. Both have taught me more about user behaviour than any course has.",
   avatarUrl: "/me.png",
   skills: [
     // Product / Business (used temporarily by page.tsx)
@@ -83,7 +83,7 @@ export const DATA = {
 
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "/blog", icon: NotebookIcon, label: "Case Studies" },
   ],
   contact: {
     email: "maryanay2000@gmail.com",
